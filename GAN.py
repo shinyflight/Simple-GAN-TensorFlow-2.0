@@ -12,21 +12,19 @@ z_vis = tf.random.normal([10, z_dim])
 # Load data
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 x_train = x_train / 255.0
-x_iter = iter(tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(4 * batch_size).batch(batch_size).repeat())
+x_iter = iter(tf.data.Dataset.from_tensor_slices(x_train).shuffle(4 * batch_size).batch(batch_size).repeat())
 
 # Generator
 G = tf.keras.models.Sequential([
   tf.keras.layers.Dense(28*28 // 2, input_shape = (z_dim,), activation='relu'),
   tf.keras.layers.Dense(28*28, activation='sigmoid'),
-  tf.keras.layers.Reshape((28, 28))
-])
+  tf.keras.layers.Reshape((28, 28))])
 
 # Discriminator
 D = tf.keras.models.Sequential([
  tf.keras.layers.Flatten(input_shape=(28, 28)),
  tf.keras.layers.Dense(28*28 // 2, activation='relu'),
- tf.keras.layers.Dense(1)
-])
+ tf.keras.layers.Dense(1)])
 
 # Loss functions
 cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits = True)

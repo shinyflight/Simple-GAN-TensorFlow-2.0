@@ -14,7 +14,11 @@ This is a Generative Adversarial Network (GAN) implementation for MNIST image ge
 ## Results
 - Vanilla GAN
 
-![image](https://im4.ezgif.com/tmp/ezgif-4-da6608d7eb85.gif "vanilla GAN")
+![ezgif-4-da6608d7eb85](https://user-images.githubusercontent.com/25117385/65006348-c3a34380-d93d-11e9-87cd-6b3b9b4c8ef1.gif "Vanilla GAN")
+
+- Conditional GAN
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/25117385/65006381-e3d30280-d93d-11e9-81fd-3230a073d971.gif "Conditional GAN")
 
 ## References
 * [Tensorflow 2.0](https://www.tensorflow.org/beta)
